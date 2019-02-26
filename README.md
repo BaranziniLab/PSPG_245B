@@ -102,3 +102,11 @@
 
 [Epilepsy example workshop](https://nbviewer.jupyter.org/github/baranzini-lab/PSPG_245B/blob/master/epilepsy_example_notebook.ipynb)
 
+##### Other examples
+>DISEASE = 'DOID:6364'<br/>
+>DISEASE_NAME = "migraine"
+
+>DISEASE = 'DOID:0050742'<br/>
+>DISEASE_NAME = "nicotine_dependence"
+
+

@@ -26,22 +26,22 @@
 ### Multiple Sclerosis (MS) examples
 
 ##### Find Disease node for MS
->MATCH (d: Disease) WHERE d.name =~ '(?i).*Multiple Sclerosis.*'<br/>
+>MATCH (d: Disease) WHERE d.name =~ '(?i).\*Multiple Sclerosis.\*'<br/>
 >RETURN d
 
 ##### Find Compounds that treat MS
->MATCH (d: Disease) WHERE d.name =~ '(?i).*Multiple Sclerosis.*'<br/>
+>MATCH (d: Disease) WHERE d.name =~ '(?i).\*Multiple Sclerosis.\*'<br/>
 >MATCH compound_for_ms = ((c: Compound)-[:TREATS_CtD]-(d))<br/>
 >RETURN compound_for_ms
 
 ##### Find Genes that bind Compounds that trat MS
->MATCH (d: Disease) WHERE d.name =~ '(?i).*Multiple Sclerosis.*'<br/>
+>MATCH (d: Disease) WHERE d.name =~ '(?i).\*Multiple Sclerosis.\*'<br/>
 >MATCH compound_for_ms = ((c: Compound)-[:TREATS_CtD]-(d))<br/>
 >MATCH ms_genes_with_compound= ((c)-[:BINDS_CbG]-(g:Gene)-[]-(d))<br/>
 >RETURN ms_genes_with_compound
 
 ##### Find Molecular Functions (GeneOntology) for the Genes that bind Compounds that trat MS
->MATCH (d: Disease) WHERE d.name =~ '(?i).*Multiple Sclerosis.*'<br/>
+>MATCH (d: Disease) WHERE d.name =~ '(?i).\*Multiple Sclerosis.\*'<br/>
 >MATCH compound_for_ms = ((c: Compound)-[:TREATS_CtD]-(d))<br/>
 >MATCH ms_genes_with_compound= ((c)-[:BINDS_CbG]-(g:Gene)-[]-(d))<br/>
 >MATCH mf = ((g)-[:PARTICIPATES_GpMF]-(:MolecularFunction))<br/>
@@ -50,22 +50,22 @@
 ### Myelin examples
 
 ##### Find all GeneOntology nodes involving Myelin
->MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).*Myelin.*'<br/>
->MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).*Myelin.*'<br/>
->MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).*Myelin.*'<br/>
+>MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).\*Myelin.\*'<br/>
+>MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).\*Myelin.\*'<br/>
+>MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).\*Myelin.\*'<br/>
 >RETURN cc, m, b
 
 ##### Find Compounds that Bind that Participate in GeneOntology nodes involving Myelin
->MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).*Myelin.*' <br/>
->MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).*Myelin.*'<br/>
->MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).*Myelin.*'<br/>
+>MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).\*Myelin.\*' <br/>
+>MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).\*Myelin.\*'<br/>
+>MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).\*Myelin.\*'<br/>
 >MATCH compounds_for_myelin_genes = ((c: Compound)-[:BINDS_CbG]-(:Gene)-[:PARTICIPATES_GpCC]-(cc)), ((c)-[]-(:Gene)-[:PARTICIPATES_GpMF]-(m)), ((c)-[]-(:Gene)-[:PARTICIPATES_GpBP]-(b))<br/>
 >RETURN compounds_for_myelin_genes
 
 ##### Find Diseases Treated by Compounds that Bind Genes that Participate in GeneOntology nodes involving Myelin
->MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).*Myelin.*' <br/>
->MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).*Myelin.*'<br/>
->MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).*Myelin.*'<br/>
+>MATCH (cc: CellularComponent) WHERE cc.name =~ '(?i).\*Myelin.\*' <br/>
+>MATCH (m: MolecularFunction) WHERE m.name =~ '(?i).\*Myelin.\*'<br/>
+>MATCH (b: BiologicalProcess) WHERE b.name =~ '(?i).\*Myelin.\*'<br/>
 >MATCH compounds_for_myelin_genes = ((c: Compound)-[:BINDS_CbG]-(:Gene)-[:PARTICIPATES_GpCC]-(cc)), ((c)-[]-(:Gene)-[:PARTICIPATES_GpMF]-(m)), ((c)-[]-(:Gene)-[:PARTICIPATES_GpBP]-(b))<br/>
 >MATCH disease_compounds_treat = ((c)-[:TREATS_CtD]-(:Disease))<br/>
 >RETURN compounds_for_myelin_genes, cc, m, b, disease_compounds_treat

@@ -98,3 +98,7 @@
 >ORDER BY DWPC DESC<br/>
 >LIMIT 5
 
+[MS example workshop](https://nbviewer.jupyter.org/github/baranzini-lab/PSPG_245B/blob/master/MS_example_notebook.ipynb)
+
+[Epilepsy example workshop](https://nbviewer.jupyter.org/github/baranzini-lab/PSPG_245B/blob/master/epilepsy_example_notebook.ipynb)
+

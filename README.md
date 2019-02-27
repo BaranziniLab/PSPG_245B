@@ -110,6 +110,6 @@
 >DISEASE_NAME = "nicotine_dependence"
 
 ##### For breast cancer please use:
->DISEASE = 'DOID:1612'
+>DISEASE = 'DOID:1612'<br/>
 >DISEASE_NAME = "breast_cancer"
 

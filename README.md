@@ -109,4 +109,7 @@
 >DISEASE = 'DOID:0050742'<br/>
 >DISEASE_NAME = "nicotine_dependence"
 
+##### For breast cancer please use:
+>DISEASE = 'DOID:1612'
+>DISEASE_NAME = "breast_cancer"
 
